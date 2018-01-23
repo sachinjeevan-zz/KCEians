@@ -19,8 +19,10 @@ gem 'jquery-atwho-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-rails'
-
+gem 'tzinfo-data'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :development do
+ 
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -36,12 +38,16 @@ end
 
 group :production do
   gem 'pg'
-  gem 'unicorn'
+ 
   gem 'rails_12factor'
-  gem 'fog'
-  gem 'fog-aws'
+ 
 end
-
+platforms :ruby do
+  gem 'unicorn'
+end
+platforms :mswin do
+  gem 'thin'
+end
 gem 'devise'
 gem 'carrierwave'
 gem 'friendly_id', '~> 5.0'
