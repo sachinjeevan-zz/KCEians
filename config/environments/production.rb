@@ -77,17 +77,17 @@ config.public_file_server.enabled = true
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'http://socifyapp.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'http://kceians.herokuapp.com' }
 
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
 
   ActionMailer::Base.smtp_settings = {
-    :address              => 'smtp.sendgrid.net',
+    :address              => 'smtp.gmail.com',
     :port                 => '587',
     :domain               => 'heroku.com',
-    :user_name            => ENV['USERNAME'],
-    :password             => ENV['PASSWORD'],
+    :user_name            => 'sachinjeevan2506@gmail.com',
+    :password             => 'f_selvapriya',
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
